@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+		<meta http-equiv="Content-Security-Policy" 
+		  content="
+		  			default-src 
+		  						'self' 
+		  						gap://ready 
+		  						'unsafe-inline'; 
+		           	style-src   
+		           				'self' 
+		           				https://*.googleapis.com 
+		           				'unsafe-inline'; 
+		           	script-src  
+		           				'self'
+		           				http://mysqljs.com 
+		  						https://*.googleapis.com 
+		           				'unsafe-inline'; 
+		           	img-src
+		           				'self'
+		           				https://*.gstatic.com
+		           				https://*.googleapis.com 
+		           				'unsafe-inline';
+		           	font-src
+		           				'self';
+		           				" 
+/>
+
+	<link rel="stylesheet" type="text/css" href="./css/alertz.css">
+	<title>Alertz</title>
+
+</head>
+
+<!--Image for the Alertz logo-->
+<body onload="showHomeTab()">
+	<div>
+		<img src="./img/alertzLogo.png">
+	</div>
+
+
+	<!--Tab menu with all the buttons-->
+	<table class="tabTable">
+		<td>
+			<div id="tabSystem">
+			    <ul class="topnav">
+			        <li><a href="#" class="tabLink" id="home" onclick="showTab(event, 'Login'  )">Login</a></li>
+			        <li><a href="#" class="tabLink"           onclick="showTab(event, 'Alerts')">Alerts</a></li>
+			        <li><a href="#" class="tabLink"           onclick="showTab(event, 'Reports')">Reports</a></li>
+			        <li><a href="#" class="tabLink"           onclick="showTab(event, 'CampusSelection')">Campus Selection</a></li>
+
+		    	</ul>
+    		</div>
+		</td>		
+	</table>
+
+<!--Login page-->
+<div id="Login" class="tabContent">
+	<form>	
+	<input type="text" placeholder="ASURITE ID"><br>
+	<input type="Password" placeholder="Password"><br><br><br>
+		<button type="button" id="loginButtton">Login</button>
+
+	</form>
+</div>
+
+
+
+<!--Notification page. First page after the login screen. -->
+<div id="Alerts" class="tabContent">
+	<form>
+	<h1>Current Notifications</h1>
+		<select>
+	  		<option value="volvo">Volvo</option>
+	  		<option value="saab">Saab</option>
+	  		<option value="mercedes">Mercedes</option>
+	  		<option value="audi">Audi</option>
+		</select>
+	<h1>Past Notifications</h1>
+		<select>
+	  		<option value="volvo">Volvo</option>
+	  		<option value="saab">Saab</option>
+	  		<option value="mercedes">Mercedes</option>
+	  		<option value="audi">Audi</option>
+		</select>
+		<br><br><br><br>
+		<button type="button" id="showButtton" onclick="initMap()">Show</button>
+		<div id="mapDiv"></div>
+		<!-- this button will pull up the data in MySQL workbench depending on which attribute the user picks -->
+	</form>	
+</div>
+
+<!--Report Page-->
+<div id="Reports" class="tabContent">
+		<form>
+		<button type="button" id="loginButtton">Back</button><br>
+		<textarea placeholder="Description"></textarea><br>
+		<textarea placeholder="Location"></textarea><br>
+
+		<button type="button" id="reportButtton">Report</button> 
+			<!-- this report button will create another table in MySQL workbench / need function fot saving this -->
+
+			
+	</form>
+</div>
+
+<!--Campus Selection page-->
+<div id="CampusSelection" class="tabContent">
+	<h1>Campus Selection<br></h1>
+		<input type="checkbox" name="Tempe">Tempe<br>
+		<input type="checkbox" name="West">West<br>
+		<input type="checkbox" name="Downtown">Downtown<br>
+		<input type="checkbox" name="Polytech">PolyTech<br>
+
+		<div>
+
+<!--BUTTON-->
+<h2>Current Location<br></h2>
+<label class = "switch">
+			<input type="checkbox">
+			<div class = "slider round"></div>
+</div>
+</div>
+
+
+</label>
+
+<!--Link to JAVASCRIPT-->
+	<script type="text/javascript" src="./js/alertz.js"></script>
+</body>
+</html>
