@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- this page pops up when the user click SHOW button on Alertz/Notification tab --> 
+	<meta charset="UTF-8">
+	<meta name="viewport" 
+		  content="width=device-width, user-scalable=no, 
+		  initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+		<meta http-equiv="Content-Security-Policy" 
+		  content="	default-src 
+		  						'self' 
+		  						gap://ready 
+		  						'unsafe-inline'; 
+		           	style-src   
+		           				'self' 
+		           				https://*.googleapis.com 
+		           				'unsafe-inline'; 
+		           	script-src  
+		           				'self' 
+		  						https://*.googleapis.com 
+		           				'unsafe-inline'; 
+		           	img-src
+		           				'self'
+		           				https://*.gstatic.com
+		           				https://*.googleapis.com 
+		           				'unsafe-inline';
+		           	font-src
+		           				'self'
+		           				https://*.gstatic.com;"
+	/>
+
+	<link rel="stylesheet" type="text/css" href="./css/alertz.css">
+	<title>Alertz</title>
+
+</head>
+
+<body>
+
+<div>
+	<img src="./img/alertzLogo.png"> <!-- logo goes into this div-->
+</div>
+
+<div id="mapDiv"></div>  <!-- google map goes into this div -->
+
+<script type="text/javascript" src="./js/alertz.js"></script>
+<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyHCJHcN8xLyPYyJSrvka2KFFleGyYVpM&callback=initMap">
+	</script>
+</body>
+</html>
